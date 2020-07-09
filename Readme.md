@@ -1,6 +1,13 @@
 # Basic info about the project to be used hopefully for justice and eventually peace
 
-## Here's the link to Registered Voters in NC
+## Setup after cloning the project locally
+* run `nvm use` to select or install the correct version of node (you'll need [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+* run `yarn` to download dependencies (you'll need [yarn](https://classic.yarnpkg.com/en/docs/install))
+* To build the app, run `yarn run build --env.TILE_LAYER_ACCESS_TOKEN=your-access-token` 
+* you'll need to replace `your-access-token` with an access token for a tile service supported by OpenStreetMap.
+[Mapbox](https://www.mapbox.com/studio/account/tokens/) is recommended.
+
+### Here's the link to Registered Voters in NC
 https://www.ncsbe.gov/Public-Records-Data-Info/Election-Results-Data
 
 ### Todo:
@@ -14,3 +21,4 @@ lat/lon to the correct address. Otherwise, we'll have to call the one by one.
 Their API has a rate limit of about 12 request per second. 
 * Should attach a map to the html page and play around with GeoJSON and some data points.
 Going with https://leafletjs.com/examples/quick-start/ and https://www.mapbox.com/pricing/#maps 
+* would be nice to transform our CSS copy method to a single source which is minified
