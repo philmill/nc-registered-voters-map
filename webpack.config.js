@@ -33,18 +33,19 @@ module.exports = (env) => ({
       patterns: [
         { from: 'node_modules/leaflet/dist/leaflet.css' },
         { from: 'node_modules/leaflet/dist/images/*.png', to: 'images' },
-        { from: 'src/index.css'}
       ],
     }),
     new HtmlWebpackPlugin({
       title: 'NC Registered Voters Map',
       scriptLoading: 'defer',
       meta: {
-        viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-      }
+        viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      },
+      pageStyle: 'body { padding: 0; margin: 0; } html, body, #leaflet { height: 100%; width: 100vw; }',
+      appMountId: 'leaflet',
     }),
     new HtmlWebpackTagsPlugin({
-      tags: ['leaflet.css', 'index.css'],
+      tags: ['leaflet.css'],
       append: true
     })
   ],

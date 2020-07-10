@@ -1,14 +1,5 @@
 import Leaflet from 'leaflet';
 
-function component() {
-  const mapDiv = document.createElement('div');
-  mapDiv.id = 'leaflet'
-  mapDiv.style.cssText = 'height: 100vh; width: auto; max-height: 1080px;'
-  return mapDiv;
-}
-
-document.body.appendChild(component());
-
 function createMap() {
   const theMap = Leaflet.map('leaflet').setView([35.6008333, -82.5541667], 13);
 
