@@ -38,6 +38,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'NC Registered Voters Map',
       scriptLoading: 'defer',
+      hash: true,
       meta: {
         viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
       },
