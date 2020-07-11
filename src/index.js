@@ -34,7 +34,7 @@ function handleLocationFound(leafletMap, e) {
 }
 
 function handleLocationError(e) {
-  alert('We respect your privacy. Location is only used on this web page and is not sent, recorded, or analysed in anyway.');
+  if (e.code === 1) alert('We respect your privacy. Location is only used on this web page and is not sent, recorded, or analysed in anyway.');
 }
 
 function createMap() {
