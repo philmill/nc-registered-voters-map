@@ -9,6 +9,7 @@ function handleLocationFound(leafletMap, e) {
     // update current position
     const {currentPosition} = appState;
     currentPosition.setLatLng(e.latlng);
+    currentPosition.setRadius(e.accuracy);
     appState = {
       ...appState,
       currentPosition
