@@ -21,7 +21,7 @@ function handleLocationFound(leafletMap, e) {
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1,
-      accessToken: TILE_LAYER_ACCESS_TOKEN,
+      accessToken: process.env.TILE_LAYER_ACCESS_TOKEN,
     }).addTo(leafletMap);
 
     var radius = e.accuracy;

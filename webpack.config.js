@@ -1,11 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = (env) => ({
+module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'index.js',
@@ -26,8 +26,8 @@ module.exports = (env) => ({
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      TILE_LAYER_ACCESS_TOKEN: JSON.stringify(env.TILE_LAYER_ACCESS_TOKEN),
+    new Dotenv({
+      systemvars: true
     }),
     new CopyPlugin({
       patterns: [
@@ -52,4 +52,4 @@ module.exports = (env) => ({
   optimization: {
     minimizer: [new UglifyJsPlugin()],
   },
-});
+};

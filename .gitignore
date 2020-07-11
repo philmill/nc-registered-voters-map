@@ -3,3 +3,4 @@ dist/
 node_modules/
 src_data/
 .DS_Store
+.env

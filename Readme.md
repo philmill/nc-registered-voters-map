@@ -3,9 +3,10 @@
 ## Setup after cloning the project locally
 * run `nvm use` to select or install the correct version of node (you'll need [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 * run `yarn` to download dependencies (you'll need [yarn](https://classic.yarnpkg.com/en/docs/install))
-* To build the app, run `yarn run build --env.TILE_LAYER_ACCESS_TOKEN=your-access-token` 
-* you'll need to replace `your-access-token` with an access token for a tile service supported by OpenStreetMap.
+* run `cp .env.example .env` file and replace `your-access-token` with an access token for a tile service supported by OpenStreetMap.
 [Mapbox](https://www.mapbox.com/studio/account/tokens/) is recommended.
+* To build the app, run `yarn run build`
+* Publish the dist directory somewhere locally or on a server 
 
 ### Here's the link to Registered Voters in NC
 https://www.ncsbe.gov/Public-Records-Data-Info/Election-Results-Data
