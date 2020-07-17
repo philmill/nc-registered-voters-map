@@ -35,7 +35,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "node_modules/leaflet/dist/leaflet.css" },
-        { from: "node_modules/leaflet/dist/images/*.png", to: "images" },
+        { from: "node_modules/leaflet/dist/images/", to: "images" },
       ],
     }),
     new HtmlWebpackPlugin({
