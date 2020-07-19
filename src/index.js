@@ -1,4 +1,5 @@
 import Leaflet from "leaflet";
+import Voters from "./voters.json";
 
 let appState = {
   currentPosition: null,
@@ -38,6 +39,22 @@ function handleLocationFound(leafletMap, e) {
       ...appState,
       currentPosition,
     };
+
+    Voters.forEach((voter) => {
+      const {
+        firstName,
+        lastName,
+        streetAddress,
+        partyAffiliation,
+        age,
+        location,
+      } = voter;
+      Leaflet.marker([location.lat, location.lng])
+        .addTo(leafletMap)
+        .bindPopup(
+          `<div style="text-transform: capitalize;"><b>${firstName} ${lastName} - ${age} - ${partyAffiliation}</b><br>${streetAddress}</div>`
+        );
+    });
   }
 }
 
