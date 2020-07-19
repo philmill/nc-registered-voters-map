@@ -30,7 +30,10 @@ function handleLocationFound(leafletMap, e) {
     ).addTo(leafletMap);
 
     var radius = e.accuracy;
-    const currentPosition = Leaflet.circle(e.latlng, radius).addTo(leafletMap);
+    const currentPosition = Leaflet.circleMarker(e.latlng, {
+      radius,
+      interactive: false,
+    }).addTo(leafletMap);
     appState = {
       ...appState,
       currentPosition,
